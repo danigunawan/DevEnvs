@@ -8,6 +8,16 @@ RUN apt-get install -y --no-install-recommends \
     ca-certificates curl git vim less \
     build-essential cmake pkg-config wget
 
+RUN apt-get install -y libsm6 libxext6 libxrender-dev
+
+RUN apt-get install -y python3-dev python3-pip python3-tk
+RUN pip3 install --upgrade pip
+RUN pip3 install dlib 
+RUN pip3 install opencv-python
+RUN pip3 install scipy 
+RUN pip3 install numpy
+RUN pip3 install torch torchvision
+RUN pip3 install matplotlib
 
 #RUN wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh && \
 #    sh -y Anaconda3-2019.07-Linux-x86_64.sh
@@ -36,5 +46,4 @@ RUN apt-get install -y --no-install-recommends \
 # bzip2 -d shape_predictor_68_face_landmarks.dat.bz2 
 
 
-# execution
-nvidia-docker run --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -p 5000:5000 -p 8888:8888 -it -v $(pwd):/workspace autheatmaps:1.0 /bin/bash
+

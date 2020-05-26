@@ -21,7 +21,16 @@ RUN apt-get install -y \
 
 ## install pip
 RUN apt-get install -y python-pip
+RUN pip install --upgrade pip==19.1.1 
 #RUN apt-get install -y python3-pip
+
+## install virtualenv
+RUN pip install virtualenv
+
+#RUN git clone https://github.com/soubhiksanyal/RingNet.git && \
+#    cd RingNet && \
+#    pip install -r requirements.txt && \
+#    pip install opendr==0.77
 
 ## install anaconda 
 #RUN wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
@@ -56,42 +65,35 @@ RUN apt-get install -y python-pip
 
 # source: https://github.com/BCV-Uniandes/AUNets
 
-RUN git clone https://github.com/BCV-Uniandes/AUNets.git 
+# RUN git clone https://github.com/BCV-Uniandes/AUNets.git 
 #RUN cd AUNets && \
 #    pip install -r requirements.txt
 
 # before installing requirements.txt 
-RUN pip install numpy
-RUN pip install -U git+https://github.com/szagoruyko/pytorchviz
-RUN pip install matplotlib
-RUN pip install scikit-image
+#RUN pip install numpy
+#RUN pip install -U git+https://github.com/szagoruyko/pytorchviz
+#RUN pip install matplotlib
+#RUN pip install scikit-image
 
 # requirements.txt
-RUN pip install scipy==1.0.0 \
-                torch==0.3.1 \
-                tensorflow==1.5.0 \
-                openpyxl==2.4.7 \
-                six==1.10.0 \
-                pandas==0.18.1 \
-                graphviz==0.8 \
-                imageio==2.1.2 \
-                tqdm==4.11.2 \
-                scikit_image==0.10.1 \
-                torchvision==0.2.0 \
-                ipdb==0.10.1 \
-                Wand==0.4.4 \
-                Pillow==5.1.0 \
-                matlab==0.1 \
-                ops==0.4.7 \                
-                scikit_learn==0.19.1 \
-                xlsxwriter==1.0.4
-
-
-
-
-
-
-
+# RUN pip install scipy==1.0.0 \
+#                 torch==0.3.1 \
+#                 tensorflow==1.5.0 \
+#                 openpyxl==2.4.7 \
+#                 six==1.10.0 \
+#                 pandas==0.18.1 \
+#                 graphviz==0.8 \
+#                 imageio==2.1.2 \
+#                 tqdm==4.11.2 \
+#                 scikit_image==0.10.1 \
+#                 torchvision==0.2.0 \
+#                 ipdb==0.10.1 \
+#                 Wand==0.4.4 \
+#                 Pillow==5.1.0 \
+#                 matlab==0.1 \
+#                 ops==0.4.7 \                
+#                 scikit_learn==0.19.1 \
+#                 xlsxwriter==1.0.4
 
 # dependencies
 # python 2.7
